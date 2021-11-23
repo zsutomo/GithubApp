@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin"
+    android:layout_marginTop="@dimen/margin"
+    android:layout_marginRight="@dimen/margin"
+    android:layout_marginBottom="@dimen/margin"
+    android:padding="@dimen/dimens_padding"
+    android:background="@drawable/rect_gradient_white_cardview">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_item_photo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:padding="@dimen/dimens_padding5"
+        android:scaleType="centerCrop"
+        card_view:layout_constraintBottom_toBottomOf="parent"
+        card_view:layout_constraintStart_toStartOf="parent"
+        card_view:layout_constraintTop_toTopOf="parent"
+        tools:src="#918D8D">
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_16"
+        android:textSize="@dimen/text_size"
+        android:textStyle="bold"
+        card_view:layout_constraintStart_toEndOf="@id/img_item_photo"
+        card_view:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/user_name" />
+
+    <TextView
+        android:id="@+id/tv_user_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginTop="@dimen/dimens_padding5"
+        android:textSize="@dimen/text_small_size"
+        card_view:layout_constraintStart_toEndOf="@id/img_item_photo"
+        card_view:layout_constraintTop_toBottomOf="@id/tv_username"
+        tools:text="@string/user_type" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
