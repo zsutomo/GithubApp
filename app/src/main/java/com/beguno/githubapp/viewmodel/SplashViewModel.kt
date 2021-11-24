@@ -1,4 +1,4 @@
-package com.beguno.githubapp
+package com.beguno.githubapp.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

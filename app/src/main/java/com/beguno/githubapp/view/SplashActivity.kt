@@ -1,4 +1,4 @@
-package com.beguno.githubapp
+package com.beguno.githubapp.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.view.Window
 import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.beguno.githubapp.viewmodel.SplashViewModel
 import com.beguno.githubapp.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {

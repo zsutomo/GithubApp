@@ -3,6 +3,10 @@ plugins {
     id 'kotlin-android'
 }
 
+// Define Variable API Key
+def STRING = 'String'
+def GITHUB_API_KEY = '"' + GithubAPI + '"' ?: '"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"'
+
 android {
     compileSdk 31
 
@@ -12,8 +16,10 @@ android {
         targetSdk 31
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        each { type ->
+            type.buildConfigField STRING, 'GithubAPI', GITHUB_API_KEY
+        }
     }
 
     buildTypes {
