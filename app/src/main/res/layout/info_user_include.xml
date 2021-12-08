@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:layout_width="match_parent"
+    android:padding="10dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:background="@color/purple_500">
+
+    <TextView
+        android:id="@+id/tv_repository_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/tv_followers_detail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="50"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/repositories"
+        android:textColor="#DCDBDB"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tv_repository_detail"
+        app:layout_constraintStart_toStartOf="@+id/tv_repository_detail"
+        app:layout_constraintTop_toBottomOf="@+id/tv_repository_detail" />
+
+    <TextView
+        android:id="@+id/tv_followers_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_repository_detail"
+        app:layout_constraintStart_toEndOf="@+id/tv_repository_detail"
+        app:layout_constraintTop_toTopOf="@+id/tv_repository_detail"
+        app:layout_constraintEnd_toStartOf="@+id/tv_following_detail"
+        tools:text="50"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/followers"
+        android:textColor="#DCDBDB"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_followers_detail"
+        app:layout_constraintEnd_toEndOf="@+id/tv_followers_detail"
+        app:layout_constraintStart_toStartOf="@+id/tv_followers_detail"
+        tools:layout_editor_absoluteY="40dp" />
+
+    <TextView
+        android:id="@+id/tv_following_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_followers_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_followers_detail"
+        app:layout_constraintTop_toTopOf="@+id/tv_followers_detail"
+        tools:text="50"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/following"
+        android:textColor="#DCDBDB"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tv_following_detail"
+        app:layout_constraintStart_toStartOf="@+id/tv_following_detail"
+        app:layout_constraintTop_toBottomOf="@+id/tv_following_detail" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

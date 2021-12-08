@@ -2,8 +2,10 @@
 <resources>
     <dimen name="margin">8dp</dimen>
     <dimen name="dimens_padding">10dp</dimen>
+    <dimen name="_padding">16dp</dimen>
     <dimen name="dimens_padding5">5dp</dimen>
     <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_22">22dp</dimen>
     <dimen name="text_size">16sp</dimen>
     <dimen name="text_small_size">12sp</dimen>
 </resources>

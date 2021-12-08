@@ -6,38 +6,39 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.beguno.githubapp.BuildConfig
 import com.beguno.githubapp.model.DetailResponse
-import com.beguno.githubapp.model.ItemsItem
-import com.beguno.githubapp.model.UserResponse
 import com.beguno.githubapp.networking.ApiConfig
-import retrofit2.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-class MainViewModel: ViewModel()  {
+class DetailViewModel: ViewModel() {
 
-    private val _user = MutableLiveData<List<ItemsItem>>()
-    val user: LiveData<List<ItemsItem>> = _user
+    private val _detail = MutableLiveData<DetailResponse>()
+    val detail: LiveData<DetailResponse> = _detail
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
-    fun findUserGithub(username: String){
+    fun findDetail(username : String) {
+
         _isLoading.value = true
-        val client = ApiConfig.getApiService().getUser(username ?: "", BuildConfig.API_KEY)
-        client.enqueue(object : Callback<UserResponse> {
+        val client = ApiConfig.getApiService().getDetails(username, BuildConfig.API_KEY)
+        client.enqueue(object : Callback<DetailResponse> {
             override fun onResponse(
-                call: Call<UserResponse>,
-                response: Response<UserResponse>
+                call: Call<DetailResponse>,
+                response: Response<DetailResponse>
+
             ) {
                 _isLoading.value = false
                 if (response.isSuccessful) {
-                    _user.value = response.body()?.items
-                    println("data : ${_user.value}")
+                    _detail.value = response.body()?.copy()
 
                 } else {
                     Log.e(TAG, "onFailure: ${response.message()}")
                 }
             }
 
-            override fun onFailure(call: Call<UserResponse>, t: Throwable) {
+            override fun onFailure(call: Call<DetailResponse>, t: Throwable) {
                 _isLoading.value = false
                 Log.e(TAG, "onFailure: ${t.message.toString()}")
             }
@@ -45,6 +46,8 @@ class MainViewModel: ViewModel()  {
     }
 
     companion object{
-        private const val TAG = "MainViewModel"
+        private const val TAG = "DetailViewModel"
     }
+
+
 }
