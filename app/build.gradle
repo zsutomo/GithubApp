@@ -1,11 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
 }
-
-// Define Variable API Key
-def STRING = 'String'
-def GITHUB_API_KEY = '"' + GithubAPI + '"' ?: '"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"'
 
 android {
     compileSdk 31
@@ -17,9 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        each { type ->
-            type.buildConfigField STRING, 'GithubAPI', GITHUB_API_KEY
-        }
+        buildConfigField("String", "API_KEY", '"token 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"')
     }
 
     buildTypes {
@@ -70,4 +66,12 @@ dependencies {
 
     //loopj
     implementation 'com.loopj.android:android-async-http:1.4.11'
+
+
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
+
+    implementation 'androidx.room:room-runtime:2.3.0'
+
+    kapt 'androidx.room:room-compiler:2.3.0'
 }

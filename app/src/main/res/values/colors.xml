@@ -8,4 +8,19 @@
     <color name="white">#FFFFFFFF</color>
     <color name="purple_bg">#7647CA</color>
 
+    <!-- Custom color. -->
+    <color name="dark_gray">#121212</color>
+    <color name="dark_purple">#1F1B24 </color>
+    <color name="green_700">#388E3C</color>
+    <color name="green_300">#81C784</color>
+    <color name="white_transparent">#29FFFFFF</color>
+    <color name="white_transparent2">#383838</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="bluegray400">#78909C</color>
+    <color name="bluegray700">#455A64</color>
+    <color name="bluegray900">#263238</color>
+    <color name="gold">#EEBC1D  </color>
+    <color name="abu_abu">#C8DAD6D6</color>
+
 </resources>
